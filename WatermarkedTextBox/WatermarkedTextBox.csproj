@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86977B4C-FF69-483D-9F1B-F2AA258499B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WatermarkedTextBox</RootNamespace>
+    <AssemblyName>WatermarkedTextBox</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\WatermarkedTextBox.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\WatermarkedTextBox.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutTab.cs" />
+    <Compile Include="Attributes\AboutTabDisplayAttribute.cs" />
+    <Compile Include="Attributes\ClonedCategoryAttribute.cs" />
+    <Compile Include="Attributes\ClonedDescriptionAttribute.cs" />
+    <Compile Include="Attributes\SRCategoryAttribute.cs" />
+    <Compile Include="Attributes\SRDefaultValueAttribute.cs" />
+    <Compile Include="Attributes\SRDescriptionAttribute.cs" />
+    <Compile Include="ClonedAttributeTargets.cs" />
+    <Compile Include="DefaultResourceManager.cs" />
+    <Compile Include="NoPaddingLabel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WatermarkedTextBox.AboutTab.cs" />
+    <Compile Include="WatermarkedTextBox.BaseHiddenMembers.cs" />
+    <Compile Include="WatermarkedTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WatermarkedTextBox.Designer.cs">
+      <DependentUpon>WatermarkedTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WatermarkedTextBox.Events.cs" />
+    <Compile Include="WatermarkedTextBox.Methods.cs" />
+    <Compile Include="WatermarkedTextBoxActionList.cs" />
+    <Compile Include="WatermarkedTextBoxDesigner.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AboutTab.png" />
+    <EmbeddedResource Include="Resources\Logo.ico" />
+    <EmbeddedResource Include="Resources\WatermarkedTextBoxIcon.png" />
+    <Content Include="Resources\WatermarkedTextBoxPreviewImage.png" />
+    <EmbeddedResource Include="StringResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
